@@ -11,6 +11,7 @@ class App extends React.Component {
       startGame: false,
       isRoundOver: false,
       player: '',
+      disabled: true,
       currentScore: 0,
       gameHistory: [],
       bulbHistory: [],
@@ -48,7 +49,6 @@ class App extends React.Component {
     let nextBulb = this.state.bulbs[Math.floor(Math.random() * 6)];
     bulbHistory = [...this.state.bulbHistory, nextBulb];
     this.setState({ bulbHistory });
-
     bulbHistory.forEach((bulb, i) => {
       setTimeout(() => {
         const allBulbs = [...this.state.bulbs];
@@ -56,6 +56,11 @@ class App extends React.Component {
         allBulbs[idx].isOn = true;
         this.setState({ bulbs: allBulbs });
         setTimeout(() => {
+          if (i + 1 === bulbHistory.length) {
+            this.setState({ disabled: false });
+          } else {
+            this.setState({ disabled: true });
+          }
           allBulbs[idx].isOn = false;
           this.setState({ bulbs: allBulbs });
         }, 100 * i + 100);
@@ -154,6 +159,7 @@ class App extends React.Component {
             currentScore={this.state.currentScore}
             bulbs={this.state.bulbs}
             checkClick={this.checkClick.bind(this)}
+            disabled={this.state.disabled}
           />
         </>
       );

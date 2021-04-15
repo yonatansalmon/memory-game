@@ -18,7 +18,7 @@ const PlayBoard = (props) => {
       </ul>
       <div className='bulbBoard'>
         {props.bulbs.map((bulb, idx) => {
-          return <Bulb key={idx} bulb={bulb} checkClick={props.checkClick} />;
+          return <Bulb key={idx} bulb={bulb} disabled={props.disabled} checkClick={props.checkClick} />;
         })}
       </div>
     </div>
