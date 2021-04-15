@@ -1,0 +1,26 @@
+.playBoardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 40px;
+  flex: 2;
+}
+
+.playerBoard {
+  list-style-type: none;
+  margin-bottom: 40px;
+  padding: 10px;
+  color: #6215af;
+}
+
+.bulbBoard {
+  width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  background-color: black;
+}

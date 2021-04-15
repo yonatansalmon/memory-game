@@ -1,0 +1,14 @@
+.bulb {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #282c34;
+  border: 1px solid black;
+  margin: 15px 40px;
+  cursor: pointer;
+  outline: none;
+}
+
+.bulb:active {
+  transform: translate(4px, 4px);
+}
