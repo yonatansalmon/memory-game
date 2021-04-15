@@ -11,9 +11,10 @@ const WelcomePage = (props) => {
     e.preventDefault();
     props.handleSubmit();
   };
+  
   return (
     <div className='welcomeContainer'>
-      <h1>Welcome to the Magnificenet Memory Game!</h1>
+      <h1>Welcome to the <span style={{color: '#cd025c'}}>Magnificent</span> Memory Game!</h1>
       <form onSubmit={(e) => handleSubmit(e)}>
         <label>
           <input
